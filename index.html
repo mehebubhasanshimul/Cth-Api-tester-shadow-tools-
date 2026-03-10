@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER TEAM HELP | SHADOW JOKER</title>
+    <style>
+        :root {
+            --neon: #ffffff;
+            --glass: rgba(0, 0, 0, 0.7);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /*    */
+            background: linear-gradient(-45deg, #ff0000, #00ff00, #0000ff, #ff8c00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /*    */
+        .header {
+            text-align: center;
+            padding: 30px 10px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .main-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 20px white;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        /*    */
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .box-logo {
+            width: 40px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            opacity: 0.7;
+        }
+
+        /* API  */
+        h3 { margin-top: 0; font-size: 18px; color: #00ffcc; }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .btn-action {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-action:hover { background: #00ffcc; }
+
+        /*   */
+        .tg-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #24A1DE;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(36, 161, 222, 0.4);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .result-box {
+            background: #000;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #00ff00;
+            min-height: 50px;
+            border: 1px solid #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            background: rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://iili.io/fQKtDkG.md.jpg" alt="Logo" class="main-logo">
+        <div class="title">CYBER TEAM HELP</div>
+        <div style="font-size: 10px; opacity: 0.7;">SECURITY RESEARCH & TOOLS</div>
+    </div>
+
+    <div class="container">
+        
+        <div class="card">
+            <img src="https://iili.io/fQKtDkG.md.jpg" class="box-logo">
+            <h3> API EXPLOIT TESTER</h3>
+            <select id="method">
+                <option value="GET">GET METHOD</option>
+                <option value="POST">POST METHOD</option>
+            </select>
+            <input type="text" id="api-url" placeholder="https://target-api.com/v1">
+            <button class="btn-action" onclick="runTest()">EXECUTE PING</button>
+            <div id="api-res" class="result-box">Awaiting command...</div>
+        </div>
+
+        <div class="card">
+            <img src="https://iili.io/fQKtDkG.md.jpg" class="box-logo">
+            <h3> GLOBAL IP SCANNER</h3>
+            <button class="btn-action" style="background: transparent; color: white; border: 1px solid white;" onclick="trackIP()">SCAN MY IDENTITY</button>
+            <div id="ip-res" class="result-box">Satellite link offline.</div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h3> JOIN COMMUNITY</h3>
+            <p style="font-size: 12px; opacity: 0.8;">         </p>
+            <a href="https://t.me/+DLEo8TQ1PjIzYzFl" class="tg-btn">
+                <span></span> JOIN CYBER TEAM HELP <span></span>
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        POWERED BY <b>SHADOW JOKER</b> | 2026<br>
+        <span style="color: red;">Warning: Ethical Use Only</span>
+    </footer>
+
+    <script>
+        // API Tester Logic
+        async function runTest() {
+            const url = document.getElementById('api-url').value;
+            const method = document.getElementById('method').value;
+            const resBox = document.getElementById('api-res');
+
+            if (!url) {
+                resBox.innerHTML = "[!] Please enter a valid URL.";
+                return;
+            }
+
+            resBox.innerHTML = "[*] Requesting " + method + "...";
+
+            try {
+                const response = await fetch(url, { method: method });
+                resBox.innerHTML = `[SUCCESS]<br>Status: ${response.status}<br>Type: ${response.type}`;
+            } catch (err) {
+                resBox.innerHTML = `[ERROR]<br>${err.message}`;
+            }
+        }
+
+        // IP Tracker Logic
+        function trackIP() {
+            const resBox = document.getElementById('ip-res');
+            resBox.innerHTML = "[*] Establishing Satellite Link...";
+            
+            fetch("https://ipapi.co/json")
+                .then(r => r.json())
+                .then(d => {
+                    resBox.innerHTML = `IP: ${d.ip}<br>ORG: ${d.org}<br>CITY: ${d.city}, ${d.country_name}`;
+                })
+                .catch(() => {
+                    resBox.innerHTML = "[!] Link Failed.";
+                });
+        }
+    </script>
+</body>
+</html>
